@@ -146,10 +146,10 @@ body {
   align-items: center;
 }
 
-.bottom-layout .highlight_p {
-  text-shadow: 2px 2px 4px #000;
-  font-weight: bold;
-  margin-top: 2rem;
+.highlight_p {
+  text-shadow: 2px 2px 4px #000!important;
+  font-weight: bold!important;
+  margin-top: 2rem!important;
 }
 #highlight {
   margin-block: 1.5rem;
