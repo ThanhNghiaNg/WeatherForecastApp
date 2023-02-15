@@ -24,7 +24,7 @@ const bottomLayout = () => {
   console.log(sunriseInt);
   console.log(percentTime);
   containerEl.innerHTML = `
-    <p class="highlight_p" >Today's Hightlight</p>
+    <p class="highlight_p" >Today's Highlight</p>
         <div id="highlight">
           <div class="card">
             <div class="highlight-header__top">Wind status</div>
