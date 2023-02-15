@@ -9,19 +9,22 @@ const bottomLayout = () => {
         time.split(":")[1]
       }`;
     }
-    const timeInt = time.split(":")[0]*60 + time.split(":")[1]*1
+    const timeInt = time.split(":")[0] * 60 + time.split(":")[1] * 1;
     return [time, timeInt];
   };
   const [sunrise, sunriseInt] = getTimein24h(
     fetchedData.forecast.forecastday[0].astro.sunrise
   );
-  const [sunset, sunsetInt] = getTimein24h(fetchedData.forecast.forecastday[0].astro.sunset);
-  const currentTimeInt = new Date().getHours()*60 + new Date().getMinutes()
-  const percentTime = (currentTimeInt - sunriseInt) / (sunsetInt - sunriseInt) * 100
-  console.log(sunriseInt)
-  console.log(percentTime)
+  const [sunset, sunsetInt] = getTimein24h(
+    fetchedData.forecast.forecastday[0].astro.sunset
+  );
+  const currentTimeInt = new Date().getHours() * 60 + new Date().getMinutes();
+  const percentTime =
+    ((currentTimeInt - sunriseInt) / (sunsetInt - sunriseInt)) * 100;
+  console.log(sunriseInt);
+  console.log(percentTime);
   containerEl.innerHTML = `
-    <p>More weather information</p>
+    <p class="highlight_p" >More weather information</p>
         <div id="highlight">
           <div class="card">
             <div class="highlight-header__top">Wind status</div>
@@ -75,7 +78,9 @@ const bottomLayout = () => {
           <div class="card">
             <div class="highlight-header__bottom">Humidity</div>
             <div class="highlight-body__bottom">
-              <div class="value"><span>${fetchedData.current.humidity}</span><span>%</span></div>
+              <div class="value"><span>${
+                fetchedData.current.humidity
+              }</span><span>%</span></div>
               <div class="explain">
                 <i class="fa-solid fa-droplet"></i>
                 <p>The dew point is 27°C right now</p>
@@ -85,7 +90,9 @@ const bottomLayout = () => {
           <div class="card">
             <div class="highlight-header__bottom">Visibility</div>
             <div class="highlight-body__bottom">
-              <div class="value"><span>${fetchedData.current.vis_km}</span><span>km</span></div>
+              <div class="value"><span>${
+                fetchedData.current.vis_km
+              }</span><span>km</span></div>
               <div class="explain">
                 <i class="fa-solid fa-eye"></i>
                 <p>Haze is affecting visibility</p>
@@ -95,7 +102,9 @@ const bottomLayout = () => {
           <div class="card">
             <div class="highlight-header__bottom">Feels Like</div>
             <div class="highlight-body__bottom">
-              <div class="value"><span>${fetchedData.current.feelslike_c}</span><span>°C</span></div>
+              <div class="value"><span>${
+                fetchedData.current.feelslike_c
+              }</span><span>°C</span></div>
               <div class="explain">
                 <i><i class="fa-solid fa-temperature-high"></i></i>
                 <p>Humidity is making it feel hotter.</p>
