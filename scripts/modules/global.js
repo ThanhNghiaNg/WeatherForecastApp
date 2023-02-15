@@ -12,7 +12,7 @@ const bottomLayoutEl = document.getElementById("bottom-layout");
 const fetchData = async () => {
   try {
     const respone = await fetch(
-      `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${query}&days=${forecastday}&aqi=yes&alerts=no`
+      `https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${query}&days=${forecastday}&aqi=yes&alerts=no`
     );
     const data = await respone.json();
     return data;

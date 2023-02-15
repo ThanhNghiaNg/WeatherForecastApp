@@ -253,12 +253,16 @@ body {
   }
 }
 
-@media only screen and (max-width: 670px) {
+@media only screen and (max-width: 768px) {
   .container {
-    margin-inline: 1rem;
+    margin-inline: 8rem;
   }
   .weather{
     display: grid;
     grid-template-columns: 1fr;
+  }
+  #highlight{
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
   }
 }
