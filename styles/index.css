@@ -1,0 +1,264 @@
+:root {
+  --primary-background: #228be6;
+  --secondary-background: #4dabf7d3;
+}
+
+body {
+  /* color: #495057; */
+  color: #f1f3f5;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 20px;
+  margin: 0;
+  background: url("https://c.wallhere.com/photos/b8/f2/Tenki_no_Ko_Hodaka_Morishima_Hina_Amano_Weathering_With_You_sky_rain_city-1798881.jpg!d");
+  background-size: cover;
+  /* background-position: center; */
+  background-repeat: no-repeat;
+}
+
+.container {
+  margin-inline: 20rem;
+}
+
+.card {
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 3px 3px 10px #000;
+  background-color: var(--secondary-background);
+}
+
+#navigation {
+  background-color: var(--primary-background);
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.search {
+  display: flex;
+  justify-content: space-between;
+}
+.search input {
+  border-radius: 6px;
+  font-size: 20px;
+  padding: 0.25rem 1rem;
+  border: none;
+}
+.search button {
+  background-color: var(--primary-background);
+  color: #f1f3f5;
+  font-size: 30px;
+  border: none;
+  cursor: pointer;
+}
+
+.search__location,
+.search__day-forecast {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.search__day-forecast input {
+  width: 12rem;
+}
+
+.search__day-forecast input::-webkit-inner-spin-button {
+  display: none;
+}
+
+.weather {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  position: relative;
+}
+
+.weather .card {
+  height: 40vh;
+  overflow-y: scroll;
+}
+
+.weather .card::-webkit-scrollbar {
+  display: none;
+}
+
+.weather__background {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.weather__info > span {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.weather__info_textdesc {
+  display: flex;
+  gap: 1rem;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+.weather__info sup {
+  font-size: 25px;
+}
+
+.weather_location {
+  border-top: solid 2px #ccc;
+}
+
+.weather_location-item {
+  margin-block: 0.5rem;
+}
+
+.weather_location-item i {
+  width: 2rem;
+}
+
+.weather_location-item #datetime {
+  display: flex;
+}
+.weather_location-item #datetime span:last-child {
+  margin-left: 1.5rem;
+}
+.weather-list__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.weather-list__header input {
+  border-radius: 6px;
+  border: none;
+  font-size: 14px;
+  padding: 0.2rem 0.8rem;
+}
+.weather-list__header input::-webkit-inner-spin-button {
+  display: none;
+}
+/* .weather-list__header button{
+    display: none;
+} */
+
+.list-item {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  align-content: center;
+  align-items: center;
+}
+
+.bottom-layout > p {
+  text-shadow: 2px 2px 4px #000;
+  font-weight: bold;
+  margin-top: 2rem;
+}
+#highlight {
+  margin-block: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.highlight-body__top {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+.highlight-body__top div:last-child {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.loading-bar {
+  width: 100%;
+  height: 20px;
+  /* border: 1px solid black; */
+  background-color: white;
+  border-radius: 10px;
+}
+
+.loading-bar .fill {
+  width: 10%;
+  height: 100%;
+  background-color: blue;
+  border-radius: 10px;
+}
+
+.bg-yellow {
+  background: linear-gradient(to right, #fff9db, #ffe066, #ffd43b, #fab005);
+}
+
+.bg-cyan {
+  background: linear-gradient(to right, #e3fafc, #c5f6fa, #66d9e8, #3bc9db);
+}
+
+.bg-red{
+  background: linear-gradient(to right, #ffc9c9, #ffa8a8, #ff8787, #f03e3e);
+}
+
+
+.highlight-body__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  font-size: 14px;
+  gap: 4rem;
+}
+
+.highlight-header__bottom {
+  margin-bottom: 1rem;
+  font-size: 16px;
+}
+
+.highlight-body__bottom .value span:first-child {
+  font-size: 24px;
+  font-weight: bold;
+  margin-right: 0.2rem;
+}
+
+.highlight-body__bottom p {
+  margin-bottom: 0;
+}
+
+@media only screen and (max-width: 1080px) {
+  .container {
+    margin-inline: 10rem;
+  }
+  .weather .card {
+    height: 40vh;
+    overflow-y: scroll;
+  }
+}
+
+@media only screen and (max-width: 960px) {
+  .container {
+    margin-inline: 5rem;
+  }
+  .weather .card {
+    height: 40vh;
+    overflow-y: scroll;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .container {
+    margin-inline: 1rem;
+  }
+  .weather .card {
+    height: 40vh;
+    overflow-y: scroll;
+  }
+}
+
+@media only screen and (max-width: 670px) {
+  .container {
+    margin-inline: 1rem;
+  }
+  .weather{
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
