@@ -21,8 +21,9 @@ const bottomLayout = () => {
   const currentTimeInt = new Date().getHours() * 60 + new Date().getMinutes();
   const percentTime =
     ((currentTimeInt - sunriseInt) / (sunsetInt - sunriseInt)) * 100;
-  console.log(sunriseInt);
-  console.log(percentTime);
+  const percentUv = ((fetchedData.current.uv / 12) * 100).toFixed();
+  const percentWind = ((fetchedData.current.wind_kph / 30) * 100).toFixed();
+
   containerEl.innerHTML = `
     <p class="highlight_p" >Today's Highlight</p>
         <div id="highlight">
@@ -31,10 +32,9 @@ const bottomLayout = () => {
 
             <div class="highlight-body__top">
               <div class="loading-bar">
-                <div class="fill bg-cyan" style="width: ${(
-                  (fetchedData.current.wind_kph / 30) *
-                  100
-                ).toFixed()}%"></div>
+                <div class="fill bg-cyan" style="width: ${
+                  percentWind > 100 ? 100 : percentWind
+                }%"></div>
               </div>
               <div>
                 <div class="value"><span>${
@@ -50,10 +50,7 @@ const bottomLayout = () => {
             <div class="highlight-header__top">UV index</div>
             <div class="highlight-body__top">
               <div class="loading-bar">
-                <div class="fill bg-red" style="width: ${(
-                  (fetchedData.current.uv / 12) *
-                  100
-                ).toFixed()}%"></div>
+                <div class="fill bg-red" style="width: ${percentUv}%"></div>
               </div>
               <div>
                 <div class="value"><span>${
@@ -66,7 +63,9 @@ const bottomLayout = () => {
             <div class="highlight-header__top">Sunrise & Sunset</div>
             <div class="highlight-body__top">
               <div class="loading-bar">
-                <div class="fill bg-yellow" style="width: ${percentTime}%"></div>
+                <div class="fill bg-yellow" style="width: ${
+                  percentTime > 100 ? 100 : percentTime
+                }%"></div>
               </div>
               <div>
                 <div class="time">Sunrise: ${sunrise}</div>
